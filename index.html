@@ -144,8 +144,8 @@
         /* SELLO CENTRADO */
         .seal { 
             position: absolute; 
-            top: 0;
-            left: 0;
+            top: 130px; /* Anclado exactamente en la punta de la solapa */
+            left: 50%; /* Centrado horizontalmente en el sobre */
             transform: translate(-50%, -50%); 
             width: 55px; 
             height: 55px; 
@@ -321,9 +321,9 @@
     <div id="envelope-screen">
         <div class="envelope-wrapper" onclick="openInvitation()">
             <div class="envelope-front"></div>
-            <div class="envelope-flap">
-                <div class="seal glowing-icon">F&J</div>
-            </div>
+            <div class="envelope-flap"></div>
+            <!-- El sello está ahora anclado fuera de la solapa para un centrado perfecto -->
+            <div class="seal glowing-icon">F&J</div>
             <div class="envelope-body"></div>
         </div>
         <div class="envelope-text">Toca para abrir</div>
