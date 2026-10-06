@@ -144,8 +144,8 @@
         /* SELLO CENTRADO */
         .seal { 
             position: absolute; 
-            top: 0; 
-            left: 0; 
+            top: 130px; /* Coincide con el grosor del border-top de la solapa */
+            left: 0; /* Centrado en el eje X de la solapa (que tiene ancho 0) */
             transform: translate(-50%, -50%); 
             width: 55px; 
             height: 55px; 
@@ -227,11 +227,11 @@
            ========================================================================== */
         
         /* --- Columna 1 (Hero) --- */
-        .names-title { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; margin-top: 20px; z-index: 1; position: relative;}
-        .names-title span { font-family: var(--font-script); font-size: 3.2rem; display: block; margin: 10px 0; color: var(--gold); text-transform: lowercase; animation: pulseGlow 3s infinite alternate;}
+        .names-title { font-size: 3.8rem; line-height: 1.1; margin-bottom: 20px; margin-top: 10px; z-index: 1; position: relative;}
+        .names-title span { font-family: var(--font-script); font-size: 3.5rem; display: block; margin: 10px 0; color: var(--gold); text-transform: lowercase; animation: pulseGlow 3s infinite alternate;}
         
         .invite-text { font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 2px; margin-top: 25px; font-weight: 500; }
-        .invite-boda { font-family: var(--font-script); font-size: 4.5rem; margin-bottom: 10px; color: var(--olive-green); text-shadow: 2px 2px 4px rgba(0,0,0,0.1);}
+        .invite-boda { font-family: var(--font-script); font-size: 2.8rem; margin-bottom: 10px; color: var(--olive-green); text-shadow: 2px 2px 4px rgba(0,0,0,0.1);}
 
         .intro-text { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; margin-bottom: 15px; color: var(--dark-green); font-weight: 600;}
         
