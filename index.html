@@ -144,9 +144,8 @@
         /* SELLO CENTRADO */
         .seal { 
             position: absolute; 
-            top: 130px; /* Anclado exactamente en la punta de la solapa */
-            left: 50%; /* Centrado horizontalmente en el sobre */
-            transform: translate(-50%, -50%); 
+            top: calc(130px - 27.5px); /* Centrado vertical restando la mitad de la altura */
+            left: calc(50% - 27.5px); /* Centrado horizontal restando la mitad del ancho */
             width: 55px; 
             height: 55px; 
             background-color: var(--gold); 
@@ -322,7 +321,7 @@
         <div class="envelope-wrapper" onclick="openInvitation()">
             <div class="envelope-front"></div>
             <div class="envelope-flap"></div>
-            <!-- El sello está ahora anclado fuera de la solapa para un centrado perfecto -->
+            <!-- El sello está centrado matemáticamente con calc() -->
             <div class="seal glowing-icon">F&J</div>
             <div class="envelope-body"></div>
         </div>
