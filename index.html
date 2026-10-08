@@ -144,8 +144,8 @@
         /* SELLO CENTRADO */
         .seal { 
             position: absolute; 
-            top: calc(130px - 27.5px); /* Centrado vertical restando la mitad de la altura */
-            left: calc(50% - 27.5px); /* Centrado horizontal restando la mitad del ancho */
+            top: calc(130px - 27.5px); 
+            left: calc(50% - 27.5px); 
             width: 55px; 
             height: 55px; 
             background-color: var(--gold); 
@@ -238,7 +238,6 @@
         .parents-names { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 1.5px; line-height: 2; color: var(--dark-green); text-transform: uppercase; }
 
         .save-date-title { font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 5px; margin-top: 25px; color: var(--gold); font-weight: 600;}
-        .save-date-date { font-family: var(--font-title); font-size: 3.5rem; color: var(--dark-green); margin-bottom: 5px; }
 
         /* Calendario */
         .calendar-wrapper { width: 100%; max-width: 320px; margin: 25px auto; font-family: var(--font-sans); font-size: 0.9rem; }
@@ -248,16 +247,23 @@
         .calendar-day { padding: 8px 0; color: var(--text-color); }
         .calendar-day.highlight { background-color: var(--gold); color: var(--white); border-radius: 50%; font-weight: bold; box-shadow: 0 0 15px rgba(168,149,97,0.8); animation: pulseGlow 2s infinite alternate;}
 
-        /* Contador un solo renglón */
+        /* Contador y Fecha combinados (un solo renglón) */
         #countdown-timer {
-            font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px;
+            font-family: var(--font-sans); font-size: 0.70rem; letter-spacing: 1px;
             color: var(--dark-green); font-weight: 700;
-            margin: 35px 0; padding: 20px 10px; width: 100%;
+            margin: 25px 0 35px 0; padding: 20px 10px; width: 100%;
             background: linear-gradient(to right, transparent, rgba(168,149,97,0.1), transparent);
             border-top: 1px solid rgba(168,149,97,0.5); border-bottom: 1px solid rgba(168,149,97,0.5);
-            display: flex; justify-content: space-between; white-space: nowrap; align-items: center;
+            display: flex; justify-content: center; align-items: center; white-space: nowrap; gap: 8px;
         }
-        #countdown-timer b { font-size: 1.3rem; color: var(--olive-green); margin-right: 3px; display: inline-block;}
+        #countdown-timer b { font-size: 1.2rem; color: var(--olive-green); margin-right: 2px; display: inline-block;}
+        .date-in-countdown { font-family: var(--font-title); font-size: 1.5rem; margin-right: 15px; background-image: linear-gradient(90deg, var(--dark-green) 0%, var(--gold) 50%, var(--dark-green) 100%); }
+
+        @media (max-width: 480px) {
+            #countdown-timer { font-size: 0.55rem; padding: 15px 2px; gap: 4px; }
+            #countdown-timer .date-in-countdown { font-size: 1.1rem !important; margin-right: 5px !important; }
+            #countdown-timer b { font-size: 0.95rem; }
+        }
 
         /* --- Columna 2 (Color Oscuro - Itinerario) --- */
         .col-dark h2 { color: var(--gold); }
@@ -321,7 +327,6 @@
         <div class="envelope-wrapper" onclick="openInvitation()">
             <div class="envelope-front"></div>
             <div class="envelope-flap"></div>
-            <!-- El sello está centrado matemáticamente con calc() -->
             <div class="seal glowing-icon">F&J</div>
             <div class="envelope-body"></div>
         </div>
@@ -352,7 +357,7 @@
                 <div class="invite-boda fade-in scale-in">Boda Civil</div>
 
                 <h1 class="names-title fade-in shimmer-text">
-                    FÁTIMA
+                    FATIMA
                     <span>&amp;</span>
                     JORGE
                 </h1>
@@ -364,7 +369,7 @@
                 <div class="parents-section fade-in" style="margin-top: 10px; margin-bottom: 40px; padding: 0;">
                     <p style="font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 5px; font-weight: 600;">Padres de la novia</p>
                     <p class="script-text" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 25px; color: var(--dark-green);">
-                        Alicia Rosas Huerta<br>
+                        Alicia Gpe. Rosas Huerta<br>
                         <span style="font-family: var(--font-title); font-size: 1.8rem; color: var(--gold); margin: 5px 0; display: inline-block;">&amp;</span><br>
                         Trinidad Apodaca Zamudio
                     </p>
@@ -373,14 +378,13 @@
                     <p class="script-text" style="font-size: 2.2rem; line-height: 1.2; color: var(--dark-green);">
                         Rosa Audelia Amavizca Pérez<br>
                         <span style="font-family: var(--font-title); font-size: 1.8rem; color: var(--gold); margin: 5px 0; display: inline-block;">&amp;</span><br>
-                        Alfredo Pérez Arredondo
+                        Alfredo Pérez Arredondo <span style="font-family: var(--font-sans); font-size: 1.4rem; color: var(--gold); vertical-align: middle;">&dagger;</span>
                     </p>
                 </div>
 
                 <div class="save-date fade-in">
                     <p class="save-date-title">RESERVA LA FECHA</p>
-                    <div class="save-date-date shimmer-text" style="background-image: linear-gradient(90deg, var(--dark-green) 0%, var(--gold) 50%, var(--dark-green) 100%);">11 &bull; 12 &bull; 2026</div>
-                    <p class="save-date-title" style="color: var(--dark-green);">VIERNES</p>
+                    <p style="font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 2px; color: var(--dark-green); margin-top: 5px; font-weight: 600;">VIERNES</p>
                 </div>
 
                 <!-- Calendario Diciembre 2026 -->
@@ -400,7 +404,9 @@
                     </div>
                 </div>
 
+                <!-- FECHA Y CONTADOR EN UN SOLO RENGLÓN -->
                 <div id="countdown-timer" class="fade-in">
+                    <span class="date-in-countdown shimmer-text">11&bull;12&bull;2026</span>
                     <span><b id="dias">00</b> DÍAS</span>
                     <span><b id="horas">00</b> HRS</span>
                     <span><b id="minutos">00</b> MIN</span>
@@ -531,7 +537,7 @@
                 <div class="dark-block fade-in scale-in" style="margin-top: 60px; text-align: center;">
                     <h3 class="shimmer-text" style="font-family: var(--font-script); font-size: 4.5rem; margin-bottom: 15px; background-image: linear-gradient(90deg, var(--gold) 0%, #fff 30%, var(--cream) 50%, #fff 70%, var(--gold) 100%);">¡Gracias!</h3>
                     <p style="font-size: 1.15rem; margin-bottom: 30px; font-style: italic; color: var(--cream);">Tu presencia hará de este día un momento inolvidable.</p>
-                    <div style="font-family: var(--font-sans); letter-spacing: 5px; font-size: 1rem; text-transform: uppercase; color: var(--gold); font-weight: 600;">Fátima & Jorge</div>
+                    <div style="font-family: var(--font-sans); letter-spacing: 5px; font-size: 1rem; text-transform: uppercase; color: var(--gold); font-weight: 600;">Fatima & Jorge</div>
                 </div>
             </div>
 
@@ -694,7 +700,7 @@
                     return; 
                 }
                 
-                mensaje = `Hola Fátima y Jorge, soy *${nombre} ${apellido}*.\n\nQuiero confirmar mi respuesta a su boda: *${asistencia}*\n\n`;
+                mensaje = `Hola Fatima y Jorge, soy *${nombre} ${apellido}*.\n\nQuiero confirmar mi respuesta a su boda: *${asistencia}*\n\n`;
             }
 
             window.open(`https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
@@ -707,13 +713,13 @@
                 alert("Por favor, escribe un mensaje primero."); 
                 return; 
             }
-            let mensaje = `¡Hola Fátima y Jorge! Les escribo para dejarles mis mejores deseos para su boda:\n\n"${wishes}"`;
+            let mensaje = `¡Hola Fatima y Jorge! Les escribo para dejarles mis mejores deseos para su boda:\n\n"${wishes}"`;
             window.open(`https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
 
         // --- 6. DESCARGAR ICS ---
         function downloadICS() {
-            const calData = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Boda Fatima y Jorge//ES\nBEGIN:VEVENT\nDTSTART:20261211T230000Z\nDTEND:20261212T050000Z\nSUMMARY:Boda Civil de Fátima y Jorge\nLOCATION:Graciela’s Restaurante (Hacienda)\nDESCRIPTION:¡Acompáñanos a celebrar nuestra boda civil!\nEND:VEVENT\nEND:VCALENDAR`;
+            const calData = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Boda Fatima y Jorge//ES\nBEGIN:VEVENT\nDTSTART:20261211T230000Z\nDTEND:20261212T050000Z\nSUMMARY:Boda Civil de Fatima y Jorge\nLOCATION:Graciela’s Restaurante (Hacienda)\nDESCRIPTION:¡Acompáñanos a celebrar nuestra boda civil!\nEND:VEVENT\nEND:VCALENDAR`;
             const blob = new Blob([calData], { type: 'text/calendar;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a'); 
